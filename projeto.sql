@@ -1,16 +1,8 @@
-CREATE TABLE professor(
-id_professor SERIAL PRIMARY KEY,
-nome varchar(255),
-email varchar(255),
-cpf varchar(15)
-);
-
-
-SELECT * FROM professor;
-
-
-INSERT INTO professor (nome, email, cpf) VALUES ('Mikael', 'mikael.alves.costa@escola.pr.gov.br', '123456789');
-
-
-DELETE FROM professor WHERE id_professor=2;
-
+CREATE TABLE alimentos(
+  id_alimentos SERIAL PRIMARY KEY,
+  id_nome varchar(120),
+  id_porcao_padrao_gramas decimal(8,2),
+  id_calorias_base decimal(8,2),
+  id_proteinas_g decimal (6,2)
+  
+)
