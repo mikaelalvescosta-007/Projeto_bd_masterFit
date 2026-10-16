@@ -58,4 +58,12 @@ CREATE TABLE usuario(
     eh_principal boolean
   );
 
-   SELECT * FROM id_endereco; 
+   SELECT * FROM id_endereco;
+    
+   CREATE TABLE cupom_desconto(
+    id_cupom SERIAL PRIMARY KEY,
+    codigo_cupom varchar(30) not null,
+    porcentual_desconto decimal(5,2),
+    valor_desconto_fixo decimal(10,2),
+    data_validade timestamp not null
+    );
