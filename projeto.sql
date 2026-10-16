@@ -1,58 +1,61 @@
 CREATE TABLE usuario(
- id_usuario SERIAL PRIMARY KEY,
- nome varchar(100)not.null,
- email varchar(100)not.null,
- senha_hash varchar(255)not.null,
- data_nascimento (date)not.null,
- tipo_perfil varchar(255)not.null,
- fcm_toke varchar(255),
- data_cadastro timestamp
- );
+    id_usuario SERIAL PRIMARY KEY,
+    nome varchar(100)not.null,
+    email varchar(100)not.null,
+    senha_hash varchar(255)not.null,
+    data_nascimento (date)not.null,
+    tipo_perfil varchar(255)not.null,
+    fcm_toke varchar(255),
+    data_cadastro timestamp
+   );
 
- SELECT * FROM usuario;
-  INSERT INTO usuario (nome,email,cpf) VALUES ('mikael', 'mikael.alves.costa@escola.pr.gov.br', '1234567890');
+    SELECT * FROM usuario;
 
-   CREATE TABLE pedido(
- id_usuario SERIAL PRIMARY KEY,
- id_clientre int not null,
- id_endereco_entrega int not null,
- id_cupom int,
- status_pedido status_pedido_enum varchar(255) not null,
- valor_subtotal decimal(10,2) not null,
- valor_desconto decimal(10,2),
- valor_total decimal(10,2),
- data_pedido timestamp
- );
+    INSERT INTO usuario (nome,email,cpf) VALUES ('mikael', 'mikael.alves.costa@escola.pr.gov.br', '1234567890');
 
-  SELECT * FROM pedido;
+    CREATE TABLE pedido(
+    id_usuario SERIAL PRIMARY KEY,
+    id_clientre int not null,
+    id_endereco_entrega int not null,
+    id_cupom int,
+    status_pedido status_pedido_enum varchar(255) not null,
+    valor_subtotal decimal(10,2) not null,
+    valor_desconto decimal(10,2),
+    valor_total decimal(10,2),
+    data_pedido timestamp
+    );
 
- INSERT INTO pedido (endereco,cliente) VALUES ('mikael', 'mikael.alves.costa@escola.pr.gov.br');
+   SELECT * FROM pedido;
 
-  CREATE TABLE item_pedido(
-  id_item_pedido SERIAL PRIMARY KEY,
-  id_pedido int not null,
-  id_suplemento int not null,
-  quantidade int not null,
-  preco_unitario decimal (10,2) not null
-  );
+   INSERT INTO pedido (endereco,cliente) VALUES ('mikael', 'mikael.alves.costa@escola.pr.gov.br');
 
- SELECT * FROM item_pedido;
+    CREATE TABLE item_pedido(
+    id_item_pedido SERIAL PRIMARY KEY,
+    id_pedido int not null,
+    id_suplemento int not null,
+    quantidade int not null,
+    preco_unitario decimal (10,2) not null
+    );
 
-  CREATE TABLE suplemento_favorito(
+   SELECT * FROM item_pedido;
 
-  id_favorito SERIL PRIMARY KEY,
-  id_usuario int not null,
-  id_suplemento int not null,
-  data_adicao timestamp
-  );
+    CREATE TABLE suplemento_favorito(
+    id_favorito SERIL PRIMARY KEY,
+    id_usuario int not null,
+    id_suplemento int not null,
+    data_adicao timestamp
+   );
+
    CREATE TABLE id_endereco(
     id_endereco SERIAL PRIMARY KEY,
-   id_usuario int not null,
-  cep varchar (8) not null,
-  logradouro varchar (150) not null,
-  numero varchar (20),
-  bairro varchar (100) not null,
-  cidade varchar (100) not null,
-  estado varchar(2) not null,
-  eh_principal boolean
+    id_usuario int not null,
+    cep varchar (8) not null,
+    logradouro varchar (150) not null,
+    numero varchar (20),
+    bairro varchar (100) not null,
+    cidade varchar (100) not null,
+    estado varchar(2) not null,
+    eh_principal boolean
   );
+
+   SELECT * FROM id_endereco; 
