@@ -13,7 +13,7 @@ CREATE TABLE usuario(
 SELECT * FROM usuario;
 
 
-INSERT INTO usuario (nome,email,cpf) VALUES ('murilo', 'murilo.nascimento.silva26@escola.pr.gov.br', '6766777667');
+INSERT INTO usuario (nome,email,cpf) VALUES ('mikael', 'mikael.alves.costa@escola.pr.gov.br', '1234567890');
 
 CREATE TABLE pedido(
  id_usuario SERIAL PRIMARY KEY,
@@ -31,7 +31,7 @@ CREATE TABLE pedido(
 SELECT * FROM pedido;
 
 
-INSERT INTO pedido (endereco,cliente) VALUES ('murilo', 'murilo.nascimento.silva26@escola.pr.gov.br');
+INSERT INTO pedido (endereco,cliente) VALUES ('mikael', 'mikael.alves.costa@escola.pr.gov.br');
 
 CREATE TABLE item_pedido(
   id_item_pedido SERIAL PRIMARY KEY,
@@ -105,4 +105,4 @@ create table public.notificacao_push (
   data_envio timestamp null,
   constraint notificacao_push_pkey primary key (id_notificacao)
 );
-
+CREATE TABLE alimentos(
