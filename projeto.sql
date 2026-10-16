@@ -106,3 +106,4 @@ create table public.notificacao_push (
   constraint notificacao_push_pkey primary key (id_notificacao)
 );
 CREATE TABLE alimentos(
+  id_alimentos SERIAL PRIMARY KEY,
