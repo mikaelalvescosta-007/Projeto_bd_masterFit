@@ -78,3 +78,4 @@ CREATE TABLE usuario(
      data_registro date not null,
      data_sincronizacao timestamp
     );
+     CREATE TABLE suplemento(
