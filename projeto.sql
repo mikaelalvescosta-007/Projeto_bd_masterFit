@@ -1,12 +1,13 @@
-CREATE TABLE alimentos(
-  id_alimentos SERIAL PRIMARY KEY,
-  id_nome varchar(120),
-  id_porcao_padrao_gramas decimal(8,2),
-  id_calorias_base decimal(8,2),
-  id_proteinas_g decimal (6,2),
-  id_carboidratos_g decimal (6,2),
-  id_gorduras_g decimal (6,2),
-  id_Criado_por_ADM int
+CREATE TABLE usuario(
+ id_usuario SERIAL PRIMARY KEY,
+ nome varchar(100)not.null,
+ email varchar(100)not.null,
+ senha_hash varchar(255)not.null,
+ data_nascimento (date)not.null,
+ tipo_perfil varchar(255)not.null,
+ fcm_toke varchar(255),
+ data_cadastro timestamp
+ );
 
-):
-  SELECT * FROM alimentos;
+ SELECT * FROM usuario;
+  INSERT INTO usuario (nome,email,cpf) VALUES ('mikael', 'mikael.alves.costa@escola.pr.gov.br', '1234567890');
