@@ -35,7 +35,7 @@ CREATE TABLE usuario(
   quantidade int not null,
   preco_unitario decimal (10,2) not null
   );
-  
+
  SELECT * FROM item_pedido;
 
   CREATE TABLE suplemento_favorito(
@@ -45,3 +45,4 @@ CREATE TABLE usuario(
   id_suplemento int not null,
   data_adicao timestamp
   );
+   CREATE TABLE id_endereco(
