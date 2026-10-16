@@ -39,7 +39,7 @@ CREATE TABLE usuario(
 
    SELECT * FROM item_pedido;
 
-    CREATE TABLE suplemento_favorito(
+   CREATE TABLE suplemento_favorito(
     id_favorito SERIL PRIMARY KEY,
     id_usuario int not null,
     id_suplemento int not null,
@@ -56,14 +56,25 @@ CREATE TABLE usuario(
     cidade varchar (100) not null,
     estado varchar(2) not null,
     eh_principal boolean
-  );
+    );
 
    SELECT * FROM id_endereco;
-    
-   CREATE TABLE cupom_desconto(
+
+    CREATE TABLE cupom_desconto(
     id_cupom SERIAL PRIMARY KEY,
     codigo_cupom varchar(30) not null,
     porcentual_desconto decimal(5,2),
     valor_desconto_fixo decimal(10,2),
     data_validade timestamp not null
+    );
+
+    CREATE TABLE diario_alimentar(
+     id_registro SERIAL PRIMARY KEY,
+     id_usuario int not null,
+     id_alimento int not null,
+     categoria_refeicao varchar(255) not null,
+     quantidad_gramas decimal(8,2) not null,
+     calorias_calculadas decimal(8,2) not null,
+     data_registro date not null,
+     data_sincronizacao timestamp
     );
