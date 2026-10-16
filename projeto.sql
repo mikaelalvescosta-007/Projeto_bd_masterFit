@@ -11,3 +11,16 @@ CREATE TABLE usuario(
 
  SELECT * FROM usuario;
   INSERT INTO usuario (nome,email,cpf) VALUES ('mikael', 'mikael.alves.costa@escola.pr.gov.br', '1234567890');
+
+   CREATE TABLE pedido(
+ id_usuario SERIAL PRIMARY KEY,
+ id_clientre int not null,
+ id_endereco_entrega int not null,
+ id_cupom int,
+ status_pedido status_pedido_enum varchar(255) not null,
+ valor_subtotal decimal(10,2) not null,
+ valor_desconto decimal(10,2),
+ valor_total decimal(10,2),
+ data_pedido timestamp
+ );
+
